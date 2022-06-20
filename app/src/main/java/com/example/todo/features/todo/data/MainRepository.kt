@@ -1,4 +1,4 @@
-package com.example.todo.data
+package com.example.todo.features.todo.data
 
 class MainRepository {
 

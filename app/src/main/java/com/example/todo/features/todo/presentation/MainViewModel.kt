@@ -1,16 +1,13 @@
-package com.example.todo.presentation
+package com.example.todo.features.todo.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.todo.data.MainRepository
-import com.example.todo.domain.MainBusiness
+import com.example.todo.features.todo.data.MainRepository
+import com.example.todo.features.todo.domain.MainBusiness
 
-class MainViewModel: ViewModel() {
-    private val mainRepository = MainRepository()
-    val mainBusiness = MainBusiness(mainRepository, MainViewModel())
+class MainViewModel(
+    private val mainBusiness: MainBusiness
+): ViewModel() {
 
-    val addToListLiveData1 = MutableLiveData<String>()
-    val addToListLiveData2 = MutableLiveData<String>()
     val listFromDatabase1 = MutableLiveData<List<String>>()
     val listFromDatabase2 = MutableLiveData<List<String>>()
 
